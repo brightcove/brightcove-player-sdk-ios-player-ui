@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>BCOVPlayerUI Reference</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="index.html">BCOVPlayerUI </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="index.html">Brightcove</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="hierarchy.html">Hierarchy</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">BCOVPlayerUI Reference</h1>
+
+					
+					<div class="section section-overview index-overview">
+						
+						
+						<h1>BCOVPlayerUI, Plugin for Brightcove Player SDK for iOS, version 1.0.0-beta1.67</h1>
+
+<h1>Supported Platforms</h1>
+
+<p>Supports iOS 7.0 and above.</p>
+
+<h1>Installation</h1>
+
+<p>You can use <a href="http://cocoapods.org">Cocoapods</a> to add the PlayerUI Plugin for Brightcove Player SDK to your project.  You can find the latest <code>Brightcove-Player-SDK-Player-UI</code> podspec <a href="https://github.com/CocoaPods/Specs/tree/master/Specs/Brightcove-Player-SDK-Player-UI>here</a>.</p>
+
+<p>To add the PlayerUI Plugin for Brightcove Player SDK to your project manually:</p>
+
+<ol>
+<li>Install the latest version of the <a href="https://github.com/brightcove/brightcove-player-sdk-ios">Brightcove Player SDK</a>.</li>
+<li>Download the latest zip'ed release of the plugin from our <a href="https://github.com/brightcove/brightcove-player-sdk-ios-player-ui/releases">release page</a>.</li>
+<li>Add the contents of Library, Headers, and Resources to the project.</li>
+<li>On the &ldquo;Build Phases&rdquo; tab of your application target, add the following to the &ldquo;Link
+ Binary With Libraries&rdquo; phase:
+
+<ul>
+<li><code>libBCOVPlayerUI.a</code></li>
+</ul>
+</li>
+<li>On the &ldquo;Build Settings&rdquo; tab of your application target:
+
+<ul>
+<li>Ensure that BCOVPlayerUI headers are in your application&rsquo;s &ldquo;Header Search Path&rdquo;.</li>
+<li>Ensure that <code>-ObjC</code> has been added to the &ldquo;Other Linker Flags&rdquo; build setting.</li>
+</ul>
+</li>
+<li>Add the font to your app:
+
+<ul>
+<li>On the &ldquo;Build Phases&rdquo; tab of your application target, add <code>bcovpuiiconfont.ttf</code> to your &ldquo;Copy Bundle Resources&rdquo;
+Phase.</li>
+</ul>
+</li>
+</ol>
+
+
+<h1>Quick Start</h1>
+
+<p>Its use is relatively straightforward. This example creates a basic adaptive layout:</p>
+
+<pre><code>    BCOVPlayerSDKManager *manager = [BCOVPlayerSDKManager sharedManager];
+[1] id&lt;BCOVPlaybackController&gt; controller = [manager createPlaybackController];
+
+[2] BCOVPUIPlayerView *pv = [[BCOVPUIPlayerView alloc] initWithPlaybackController:playbackController];
+    [self.videoContainer addSubview:pv];
+
+    NSString *token;      // (Brightcove Media API token with URL access)
+    NSString *playlistID; // (ID of the playlist you wish to use)
+    BCOVCatalogService *catalog = [[BCOVCatalogService alloc] initWithToken:token];
+    [catalog findPlaylistWithPlaylistID:playlistID
+                             parameters:nil
+                             completion:^(BCOVPlaylist *playlist,
+                                          NSDictionary *jsonResponse,
+                                          NSError      *error) {
+
+        [controller setVideos:playlist];
+        [controller play];
+
+    }];
+</code></pre>
+
+<p>Let&rsquo;s break this code down into steps, to make it a bit simpler to digest:</p>
+
+<ol>
+<li>You create a playback controller with its default settings.</li>
+<li>You create a player view using the playback controller. This will create a player view using its default settings.</li>
+</ol>
+
+
+<h1>Customizing Plugin Behavior</h1>
+
+<p>The BCOVPlayerUI plugin aims to provide an easy out of the box experience. However, it&rsquo;s possible to change the default behavior.</p>
+
+<h2><a href="Classes/BCOVPUIPlayerViewOptions.html">BCOVPUIPlayerViewOptions</a></h2>
+
+<p>The <a href="Classes/BCOVPUIPlayerViewOptions.html"><code>BCOVPUIPlayerViewOptions</code></a> class allows you to customize some BCOVPlayerUI behavior at initialization. You can customize:</p>
+
+<ul>
+<li><code>jumpBackInterval</code> The time in seconds the player will jump back when the jump back button is pressed.</li>
+<li><code>hideControlsInterval</code> The time in seconds after the last touch event, before the controls are hidden.</li>
+<li><code>hideControlsAnimationDuration</code> The time in seconds it takes for the controls to animate to hidden.</li>
+<li><code>showControlsAnimationDuration</code> The time in seconds it takes for the controls to animate to visible.</li>
+<li><code>presentingViewController</code> The view controller to use for presenting things like modals and fullscreen.</li>
+</ul>
+
+
+<p>Options can be set using the following method:</p>
+
+<pre><code>    BCOVPlayerSDKManager *manager = [BCOVPlayerSDKManager sharedManager];
+    id&lt;BCOVPlaybackController&gt; controller = [manager createPlaybackController];
+
+[*] BCOVPUIPlayerViewOptions *options = [[BCOVPUIPlayerViewOptions alloc] init];
+    options.jumpBackInterval = 5;
+
+    BCOVPUIPlayerView *pv = [[BCOVPUIPlayerView alloc] initWithPlaybackController:playbackController options:options];
+</code></pre>
+
+<h2>Out of the Box Layouts</h2>
+
+<p>Three layouts are provided out of the box to support different types of video. By default, the player view will switch to these layouts automatically depending on the type of video. However, if you know that your player will only be displaying VOD, Live, or Live DVR, you can force a specific layout.</p>
+
+<p>To force a layout, simply create a <code>BCOVPUIBasicControlView</code> instance using one of the convenience factory methods corresponding to the layout you want. Use this controls view when initializing the player view. The example below forces a live DVR layout:</p>
+
+<pre><code>    BCOVPlayerSDKManager *manager = [BCOVPlayerSDKManager sharedManager];
+    id&lt;BCOVPlaybackController&gt; controller = [manager createPlaybackController];
+
+    BCOVPUIPlayerViewOptions *options = [[BCOVPUIPlayerViewOptions alloc] init];
+    options.jumpBackInterval = 5;
+
+[*] BCOVPUIBasicControlView *controlsView = [BCOVPUIBasicControlView basicControlViewWithLiveDVRLayout];
+
+    BCOVPUIPlayerView *pv = [[BCOVPUIPlayerView alloc] initWithPlaybackController:self.playbackController options:options controlsView:controlView];
+</code></pre>
+
+<h1>Frequently Asked Questions</h1>
+
+<p><strong> Does this work with all Brightcove player sdk plugins? </strong></p>
+
+<p>This release support basic VOD, Live, and Live DVR playback without advertising. We will other support for plugins in future releases.</p>
+
+<p><strong> How can I customize properties other than those mentioned above?</strong></p>
+
+<p>Our goal is to create something that&rsquo;s easy to customize, while still providing a lot of functionality and behavior out of the box. In upcoming releases, we will be covering more customization with new APIs and more documentation. If there is a feature you are looking for, please let us know in our forum.</p>
+
+<p><strong> Will there be breaking API changes in the future versions? </strong></p>
+
+<p>We will do our best not to change things unless we really need to. However, if we do need to make API changes, we will provide clear migration steps in the CHANGELOG.</p>
+						
+						
+					</div>
+					
+
+					<div class="index-container">
+						
+
+						
+						<div class="index-column">
+							<h2 class="index-title">Class References</h2>
+							<ul>
+								
+								<li><a href="Classes/BCOVPUIBasicControlView.html">BCOVPUIBasicControlView</a></li>
+								
+								<li><a href="Classes/BCOVPUICommon.html">BCOVPUICommon</a></li>
+								
+								<li><a href="Classes/BCOVPUIControlLayout.html">BCOVPUIControlLayout</a></li>
+								
+								<li><a href="Classes/BCOVPUIMutableControlLayout.html">BCOVPUIMutableControlLayout</a></li>
+								
+								<li><a href="Classes/BCOVPUIPlayerView.html">BCOVPUIPlayerView</a></li>
+								
+								<li><a href="Classes/BCOVPUIPlayerViewOptions.html">BCOVPUIPlayerViewOptions</a></li>
+								
+								<li><a href="Classes/BCOVPUISlider.html">BCOVPUISlider</a></li>
+								
+							</ul>
+						</div>
+						
+
+						
+						<div class="index-column">
+							
+							<h2 class="index-title">Protocol References</h2>
+							<ul>
+								
+								<li><a href="Protocols/BCOVPUIPlayerViewDelegate.html">BCOVPUIPlayerViewDelegate</a></li>
+								
+							</ul>
+							
+
+							
+							<h2 class="index-title">Constant References</h2>
+							<ul>
+								
+									<li><a href="Constants/BCOVPUIBasicComponents.html">BCOVPUIBasicComponents</a></li>
+								
+									<li><a href="Constants/BCOVPUIBasicControlSize.html">BCOVPUIBasicControlSize</a></li>
+								
+									<li><a href="Constants/BCOVPUIButtonIcon.html">BCOVPUIButtonIcon</a></li>
+								
+									<li><a href="Constants/BCOVPUIScreenMode.html">BCOVPUIScreenMode</a></li>
+								
+									<li><a href="Constants/BCOVPUIVideoType.html">BCOVPUIVideoType</a></li>
+								
+									<li><a href="Constants/BCOVPUIViewTag.html">BCOVPUIViewTag</a></li>
+								
+							</ul>
+							
+
+							
+						</div>
+						
+					</div>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2015 Brightcove. All rights reserved. Updated: 2015-05-28</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="js/script.js"></script>
+</body>
+</html>
