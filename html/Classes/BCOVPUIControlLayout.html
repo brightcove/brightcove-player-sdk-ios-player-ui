@@ -56,19 +56,17 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/itemSize">itemSize</option>
+		<option value="//api/name/allLayoutItems">allLayoutItems</option>
 		
-		<option value="//api/name/itemSpacing">itemSpacing</option>
+		<option value="//api/name/compactLayoutItems">compactLayoutItems</option>
 		
-		<option value="//api/name/items">items</option>
+		<option value="//api/name/compactLayoutMaximumWidth">compactLayoutMaximumWidth</option>
 		
-		<option value="//api/name/layoutStrategy">layoutStrategy</option>
+		<option value="//api/name/controlBarHeight">controlBarHeight</option>
 		
-		<option value="//api/name/maximumWidthOfControlSizeCompact">maximumWidthOfControlSizeCompact</option>
+		<option value="//api/name/horizontalItemSpacing">horizontalItemSpacing</option>
 		
-		<option value="//api/name/preferredHeightOfControlSizeCompact">preferredHeightOfControlSizeCompact</option>
-		
-		<option value="//api/name/preferredHeightOfControlSizeRegular">preferredHeightOfControlSizeRegular</option>
+		<option value="//api/name/standardLayoutItems">standardLayoutItems</option>
 		
 	</optgroup>
 	
@@ -76,13 +74,11 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/defaultAdaptiveLayoutStrategy">+ defaultAdaptiveLayoutStrategy</option>
+		<option value="//api/name/basicLiveControlLayout">+ basicLiveControlLayout</option>
 		
-		<option value="//api/name/layoutStrategyForVideoTypeLive">+ layoutStrategyForVideoTypeLive</option>
+		<option value="//api/name/basicLiveDVRControlLayout">+ basicLiveDVRControlLayout</option>
 		
-		<option value="//api/name/layoutStrategyForVideoTypeLiveDVR">+ layoutStrategyForVideoTypeLiveDVR</option>
-		
-		<option value="//api/name/layoutStrategyForVideoTypeVOD">+ layoutStrategyForVideoTypeVOD</option>
+		<option value="//api/name/basicVODControlLayout">+ basicVODControlLayout</option>
 		
 	</optgroup>
 	
@@ -90,7 +86,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/initWithItems:">- initWithItems:</option>
+		<option value="//api/name/initWithStandardControls:compactControls:">- initWithStandardControls:compactControls:</option>
 		
 	</optgroup>
 	
@@ -116,7 +112,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Conforms to</th>
-	<td>NSCopying<br />NSMutableCopying</td>
+	<td>NSCopying</td>
 </tr><tr>
 	<th>Declared in</th>
 	<td>BCOVPUIBasicControlView.h</td>
@@ -129,8 +125,12 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Layout options used to construct a player view. To modify its properties,
-create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCOVPUIMutableControlLayout</a>).</p>
+						<p>BCOVPUIControlLayout
+The BCOVPUIControlLayout object is created with a set
+of controls embedded in <a href="../Classes/BCOVPUILayoutView.html">BCOVPUILayoutView</a> objects
+with a few customizing parameters.
+The BCOVPUIControlLayout object is installed in
+a <a href="../Classes/BCOVPUILayoutView.html">BCOVPUILayoutView</a> for display in a player view.</p>
 					</div>
 					
 					
@@ -146,8 +146,8 @@ create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCO
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/items" title="items"></a>
-	<h3 class="method-title"><code><a href="#//api/name/items">&nbsp;&nbsp;items</a></code>
+	<a name="//api/name/standardLayoutItems" title="standardLayoutItems"></a>
+	<h3 class="method-title"><code><a href="#//api/name/standardLayoutItems">&nbsp;&nbsp;standardLayoutItems</a></code>
 </h3>
 
 	<div class="method-info">
@@ -157,12 +157,19 @@ create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCO
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Items to layout.</p>
+				<p>standardLayoutItems is the array containing one or more
+subarrays of controls presented when the player view width
+is greater than <a href="#//api/name/compactLayoutMaximumWidth">compactLayoutMaximumWidth</a>.
+Each subarray contains a list of <a href="../Classes/BCOVPUILayoutView.html">BCOVPUILayoutView</a> objects
+that will be presented in a <a href="../Classes/BCOVPUILayoutView.html">BCOVPUILayoutView</a>.
+Each subarray represents a control bar in the player view.
+standardLayoutItems typically consists of a single subarray
+representing a single row of controls.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSArray *items</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSArray *standardLayoutItems</code></div>
 
 		    
 			
@@ -174,7 +181,14 @@ create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCO
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Items to layout.</p>
+				<p>standardLayoutItems is the array containing one or more
+subarrays of controls presented when the player view width
+is greater than <a href="#//api/name/compactLayoutMaximumWidth">compactLayoutMaximumWidth</a>.
+Each subarray contains a list of <a href="../Classes/BCOVPUILayoutView.html">BCOVPUILayoutView</a> objects
+that will be presented in a <a href="../Classes/BCOVPUILayoutView.html">BCOVPUILayoutView</a>.
+Each subarray represents a control bar in the player view.
+standardLayoutItems typically consists of a single subarray
+representing a single row of controls.</p>
 			</div>
 			
 
@@ -192,8 +206,8 @@ create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCO
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/layoutStrategy" title="layoutStrategy"></a>
-	<h3 class="method-title"><code><a href="#//api/name/layoutStrategy">&nbsp;&nbsp;layoutStrategy</a></code>
+	<a name="//api/name/compactLayoutItems" title="compactLayoutItems"></a>
+	<h3 class="method-title"><code><a href="#//api/name/compactLayoutItems">&nbsp;&nbsp;compactLayoutItems</a></code>
 </h3>
 
 	<div class="method-info">
@@ -203,12 +217,20 @@ create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCO
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Layout block to controlling the layout of elements.</p>
+				<p>compactLayoutItems is the array containing one or more
+subarrays of controls presented when the player view width
+is less than <a href="#//api/name/compactLayoutMaximumWidth">compactLayoutMaximumWidth</a>.
+Each subarray contains a list of <a href="../Classes/BCOVPUILayoutView.html">BCOVPUILayoutView</a> objects
+that will be presented in a <a href="../Classes/BCOVPUILayoutView.html">BCOVPUILayoutView</a>.
+Each subarray represents a control bar in the player view.
+compactLayoutItems typically consists of two subarrays
+representing two row of controls, where each row has fewer
+controls to better fit the width of an iPhone screen.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) BCOVPUIControlLayoutStrategy layoutStrategy</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSArray *compactLayoutItems</code></div>
 
 		    
 			
@@ -220,7 +242,15 @@ create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCO
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Layout block to controlling the layout of elements.</p>
+				<p>compactLayoutItems is the array containing one or more
+subarrays of controls presented when the player view width
+is less than <a href="#//api/name/compactLayoutMaximumWidth">compactLayoutMaximumWidth</a>.
+Each subarray contains a list of <a href="../Classes/BCOVPUILayoutView.html">BCOVPUILayoutView</a> objects
+that will be presented in a <a href="../Classes/BCOVPUILayoutView.html">BCOVPUILayoutView</a>.
+Each subarray represents a control bar in the player view.
+compactLayoutItems typically consists of two subarrays
+representing two row of controls, where each row has fewer
+controls to better fit the width of an iPhone screen.</p>
 			</div>
 			
 
@@ -238,8 +268,8 @@ create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCO
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/itemSize" title="itemSize"></a>
-	<h3 class="method-title"><code><a href="#//api/name/itemSize">&nbsp;&nbsp;itemSize</a></code>
+	<a name="//api/name/allLayoutItems" title="allLayoutItems"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allLayoutItems">&nbsp;&nbsp;allLayoutItems</a></code>
 </h3>
 
 	<div class="method-info">
@@ -249,12 +279,16 @@ create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCO
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The unit size of views.</p>
+				<p>Set of all layout objects.
+The same object instances are typically used in both the
+<a href="#//api/name/standardLayoutItems">standardLayoutItems</a> and <a href="#//api/name/compactLayoutItems">compactLayoutItems</a> containers.
+This set contains exactly one of each and every <a href="../Classes/BCOVPUILayoutView.html">BCOVPUILayoutView</a>
+object, and is used as a convenience for iterating through every item.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) CGSize itemSize</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSSet *allLayoutItems</code></div>
 
 		    
 			
@@ -266,7 +300,11 @@ create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCO
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The unit size of views.</p>
+				<p>Set of all layout objects.
+The same object instances are typically used in both the
+<a href="#//api/name/standardLayoutItems">standardLayoutItems</a> and <a href="#//api/name/compactLayoutItems">compactLayoutItems</a> containers.
+This set contains exactly one of each and every <a href="../Classes/BCOVPUILayoutView.html">BCOVPUILayoutView</a>
+object, and is used as a convenience for iterating through every item.</p>
 			</div>
 			
 
@@ -284,8 +322,8 @@ create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCO
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/itemSpacing" title="itemSpacing"></a>
-	<h3 class="method-title"><code><a href="#//api/name/itemSpacing">&nbsp;&nbsp;itemSpacing</a></code>
+	<a name="//api/name/controlBarHeight" title="controlBarHeight"></a>
+	<h3 class="method-title"><code><a href="#//api/name/controlBarHeight">&nbsp;&nbsp;controlBarHeight</a></code>
 </h3>
 
 	<div class="method-info">
@@ -295,12 +333,13 @@ create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCO
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The spacing between views.</p>
+				<p>The vertical height of each bar of controls
+represented in <a href="#//api/name/standardLayoutItems">standardLayoutItems</a> and <a href="#//api/name/compactLayoutItems">compactLayoutItems</a>.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) CGFloat itemSpacing</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat controlBarHeight</code></div>
 
 		    
 			
@@ -312,7 +351,8 @@ create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCO
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The spacing between views.</p>
+				<p>The vertical height of each bar of controls
+represented in <a href="#//api/name/standardLayoutItems">standardLayoutItems</a> and <a href="#//api/name/compactLayoutItems">compactLayoutItems</a>.</p>
 			</div>
 			
 
@@ -330,8 +370,8 @@ create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCO
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/maximumWidthOfControlSizeCompact" title="maximumWidthOfControlSizeCompact"></a>
-	<h3 class="method-title"><code><a href="#//api/name/maximumWidthOfControlSizeCompact">&nbsp;&nbsp;maximumWidthOfControlSizeCompact</a></code>
+	<a name="//api/name/horizontalItemSpacing" title="horizontalItemSpacing"></a>
+	<h3 class="method-title"><code><a href="#//api/name/horizontalItemSpacing">&nbsp;&nbsp;horizontalItemSpacing</a></code>
 </h3>
 
 	<div class="method-info">
@@ -341,16 +381,12 @@ create a mutable copy (<a href="../Classes/BCOVPUIMutableControlLayout.html">BCO
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The maximum width of the compact controls. If the controls view is wider than
-this value, the <a href="../Constants/BCOVPUIBasicControlSize.html">BCOVPUIBasicControlSize</a> will be switched to Regular.  If less wide,
-it will switch to Compact. If using default layout strategy, it will use this value
-along with <a href="../Classes/BCOVPUIControlLayout.html#//api/name/preferredHeightOfControlSizeRegular">preferredHeightOfControlSizeRegular</a> and <a href="../Classes/BCOVPUIControlLayout.html#//api/name/preferredHeightOfControlSizeCompact">preferredHeightOfControlSizeCompact</a>
-to determine when to switch from single to double line layouts.</p>
+				<p>The horizontal spacing between layout views.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) CGFloat maximumWidthOfControlSizeCompact</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat horizontalItemSpacing</code></div>
 
 		    
 			
@@ -362,11 +398,7 @@ to determine when to switch from single to double line layouts.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The maximum width of the compact controls. If the controls view is wider than
-this value, the <a href="../Constants/BCOVPUIBasicControlSize.html">BCOVPUIBasicControlSize</a> will be switched to Regular.  If less wide,
-it will switch to Compact. If using default layout strategy, it will use this value
-along with <a href="../Classes/BCOVPUIControlLayout.html#//api/name/preferredHeightOfControlSizeRegular">preferredHeightOfControlSizeRegular</a> and <a href="../Classes/BCOVPUIControlLayout.html#//api/name/preferredHeightOfControlSizeCompact">preferredHeightOfControlSizeCompact</a>
-to determine when to switch from single to double line layouts.</p>
+				<p>The horizontal spacing between layout views.</p>
 			</div>
 			
 
@@ -384,8 +416,8 @@ to determine when to switch from single to double line layouts.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/preferredHeightOfControlSizeRegular" title="preferredHeightOfControlSizeRegular"></a>
-	<h3 class="method-title"><code><a href="#//api/name/preferredHeightOfControlSizeRegular">&nbsp;&nbsp;preferredHeightOfControlSizeRegular</a></code>
+	<a name="//api/name/compactLayoutMaximumWidth" title="compactLayoutMaximumWidth"></a>
+	<h3 class="method-title"><code><a href="#//api/name/compactLayoutMaximumWidth">&nbsp;&nbsp;compactLayoutMaximumWidth</a></code>
 </h3>
 
 	<div class="method-info">
@@ -395,12 +427,14 @@ to determine when to switch from single to double line layouts.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Determines the intrinsic content height of the controls with the regular size.</p>
+				<p>The maximum width of the compact controls. If the controls view
+is smaller than this value, the <a href="#//api/name/compactLayoutItems">compactLayoutItems</a> will be presented.
+If smaller, the <a href="#//api/name/standardLayoutItems">standardLayoutItems</a> will be used.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) CGFloat preferredHeightOfControlSizeRegular</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat compactLayoutMaximumWidth</code></div>
 
 		    
 			
@@ -412,18 +446,9 @@ to determine when to switch from single to double line layouts.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Determines the intrinsic content height of the controls with the regular size.</p>
-
-<p>It can return UIViewNoIntrinsicMetric, If the height is based on a video type.
-* BCOVPUIVideoTypeVOD: the height is the itemSize&rsquo;s height.
-* BCOVPUIVideoTypeLive: the height is the itemSize&rsquo;s height.
-* BCOVPUIVideoTypeLiveDVR: the height is the itemSize&rsquo;s height.</p>
-
-<p>It can return kBCOVPUIControlHeightItemSize, if the height is the itemSize&rsquo;s
-height regardless of video type.</p>
-
-<p>It can return kBCOVPUIControlHeightItemSizeDouble, if the height is two times
-of itemSize&rsquo;s height regardless of video type.</p>
+				<p>The maximum width of the compact controls. If the controls view
+is smaller than this value, the <a href="#//api/name/compactLayoutItems">compactLayoutItems</a> will be presented.
+If smaller, the <a href="#//api/name/standardLayoutItems">standardLayoutItems</a> will be used.</p>
 			</div>
 			
 
@@ -441,65 +466,8 @@ of itemSize&rsquo;s height regardless of video type.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/preferredHeightOfControlSizeCompact" title="preferredHeightOfControlSizeCompact"></a>
-	<h3 class="method-title"><code><a href="#//api/name/preferredHeightOfControlSizeCompact">&nbsp;&nbsp;preferredHeightOfControlSizeCompact</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Determines the intrinsic content height of the controls with the regular size.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) CGFloat preferredHeightOfControlSizeCompact</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Determines the intrinsic content height of the controls with the regular size.</p>
-
-<p>It can return UIViewNoIntrinsicMetric, If the height is based on a video type.
-* BCOVPUIVideoTypeVOD: the height is two times of itemSize&rsquo;s height.
-* BCOVPUIVideoTypeLive: the height is the itemSize&rsquo;s height.
-* BCOVPUIVideoTypeLiveDVR: the height is two times of itemSize&rsquo;s height.</p>
-
-<p>It can return kBCOVPUIControlHeightItemSize, if the height is the itemSize&rsquo;s
-height regardless of video type.</p>
-
-<p>It can return kBCOVPUIControlHeightItemSizeDouble, if the height is two times
-of itemSize&rsquo;s height regardless of video type.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BCOVPUIBasicControlView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithItems:" title="initWithItems:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithItems:">&ndash;&nbsp;initWithItems:</a></code>
+	<a name="//api/name/initWithStandardControls:compactControls:" title="initWithStandardControls:compactControls:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithStandardControls:compactControls:">&ndash;&nbsp;initWithStandardControls:compactControls:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -514,7 +482,7 @@ of itemSize&rsquo;s height regardless of video type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithItems:(NSArray *)<em>items</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithStandardControls:(NSArray *)<em>standardLayoutLines</em> compactControls:(NSArray *)<em>compactControls</em></code></div>
 
 		    
 			
@@ -525,7 +493,7 @@ of itemSize&rsquo;s height regardless of video type.</p>
 					<tr>
 						<th scope="row" class="argument-name"><code>items</code></th>
 						<td><p>The UI components used in the layout. You can use
-<a href="../Classes/BCOVPUIBasicControlView.html#//api/name/componentItemForBasicComponents:">[BCOVPUIBasicControlView componentItemForBasicComponents:]</a>.</p></td>
+[BCOVPUIBasicControlView componentItemForBasicComponents:].</p></td>
 					</tr>
 				
 				</table>
@@ -535,7 +503,7 @@ of itemSize&rsquo;s height regardless of video type.</p>
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>An initializes immutable instance.</p>
+				<p>A BCOVPUIControlLayout instance initialized with the specified controls.</p>
 			</div>
 			
 
@@ -562,8 +530,8 @@ of itemSize&rsquo;s height regardless of video type.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/defaultAdaptiveLayoutStrategy" title="defaultAdaptiveLayoutStrategy"></a>
-	<h3 class="method-title"><code><a href="#//api/name/defaultAdaptiveLayoutStrategy">+&nbsp;defaultAdaptiveLayoutStrategy</a></code>
+	<a name="//api/name/basicVODControlLayout" title="basicVODControlLayout"></a>
+	<h3 class="method-title"><code><a href="#//api/name/basicVODControlLayout">+&nbsp;basicVODControlLayout</a></code>
 </h3>
 
 	<div class="method-info">
@@ -573,13 +541,13 @@ of itemSize&rsquo;s height regardless of video type.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Convenience method that returns a strategy that automatically switches layouts
-based on video type.</p>
+				<p>Convenience factory method to create a control layout
+designed for video on demand.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BCOVPUIControlLayoutStrategy)defaultAdaptiveLayoutStrategy</code></div>
+			<div class="method-subsection method-declaration"><code>+ (instancetype)basicVODControlLayout</code></div>
 
 		    
 			
@@ -591,8 +559,8 @@ based on video type.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Convenience method that returns a strategy that automatically switches layouts
-based on video type.</p>
+				<p>Convenience factory method to create a control layout
+designed for video on demand.</p>
 			</div>
 			
 
@@ -610,8 +578,8 @@ based on video type.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/layoutStrategyForVideoTypeVOD" title="layoutStrategyForVideoTypeVOD"></a>
-	<h3 class="method-title"><code><a href="#//api/name/layoutStrategyForVideoTypeVOD">+&nbsp;layoutStrategyForVideoTypeVOD</a></code>
+	<a name="//api/name/basicLiveControlLayout" title="basicLiveControlLayout"></a>
+	<h3 class="method-title"><code><a href="#//api/name/basicLiveControlLayout">+&nbsp;basicLiveControlLayout</a></code>
 </h3>
 
 	<div class="method-info">
@@ -621,12 +589,13 @@ based on video type.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Convenience method that returns a strategy that only uses a Video On Demand layout.</p>
+				<p>Convenience factory method to create a control layout
+designed for a live video.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BCOVPUIControlLayoutStrategy)layoutStrategyForVideoTypeVOD</code></div>
+			<div class="method-subsection method-declaration"><code>+ (instancetype)basicLiveControlLayout</code></div>
 
 		    
 			
@@ -638,7 +607,8 @@ based on video type.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Convenience method that returns a strategy that only uses a Video On Demand layout.</p>
+				<p>Convenience factory method to create a control layout
+designed for a live video.</p>
 			</div>
 			
 
@@ -656,8 +626,8 @@ based on video type.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/layoutStrategyForVideoTypeLive" title="layoutStrategyForVideoTypeLive"></a>
-	<h3 class="method-title"><code><a href="#//api/name/layoutStrategyForVideoTypeLive">+&nbsp;layoutStrategyForVideoTypeLive</a></code>
+	<a name="//api/name/basicLiveDVRControlLayout" title="basicLiveDVRControlLayout"></a>
+	<h3 class="method-title"><code><a href="#//api/name/basicLiveDVRControlLayout">+&nbsp;basicLiveDVRControlLayout</a></code>
 </h3>
 
 	<div class="method-info">
@@ -667,12 +637,13 @@ based on video type.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Convenience method that returns a strategy that only uses a Live layout.</p>
+				<p>Convenience factory method to create a control layout
+designed for live DVR playback.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BCOVPUIControlLayoutStrategy)layoutStrategyForVideoTypeLive</code></div>
+			<div class="method-subsection method-declaration"><code>+ (instancetype)basicLiveDVRControlLayout</code></div>
 
 		    
 			
@@ -684,53 +655,8 @@ based on video type.</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Convenience method that returns a strategy that only uses a Live layout.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BCOVPUIBasicControlView.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/layoutStrategyForVideoTypeLiveDVR" title="layoutStrategyForVideoTypeLiveDVR"></a>
-	<h3 class="method-title"><code><a href="#//api/name/layoutStrategyForVideoTypeLiveDVR">+&nbsp;layoutStrategyForVideoTypeLiveDVR</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Convenience method that returns a strategy that only uses a Live DVR layout.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (BCOVPUIControlLayoutStrategy)layoutStrategyForVideoTypeLiveDVR</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Convenience method that returns a strategy that only uses a Live DVR layout.</p>
+				<p>Convenience factory method to create a control layout
+designed for live DVR playback.</p>
 			</div>
 			
 
@@ -760,7 +686,7 @@ based on video type.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Brightcove. All rights reserved. Updated: 2015-06-17</p>
+						<p class="copyright">Copyright &copy; 2015 Brightcove. All rights reserved. Updated: 2015-11-19</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

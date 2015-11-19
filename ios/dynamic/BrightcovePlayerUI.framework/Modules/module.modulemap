@@ -1,0 +1,6 @@
+framework module BrightcovePlayerUI {
+  umbrella header "BrightcovePlayerUI.h"
+
+  export *
+  module * { export * }
+}
