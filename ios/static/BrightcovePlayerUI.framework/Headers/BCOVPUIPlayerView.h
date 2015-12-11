@@ -147,12 +147,6 @@ typedef NS_ENUM(NSUInteger, BCOVPUIScreenMode) {
 @property (nonatomic, weak, readonly) BCOVPUIBasicControlView *controlsView;
 
 /**
- * Adevertising controls view. This view should exist in either the 
- * contentOverlayView or controlsFadingView view.
- */
-@property (nonatomic, weak, readonly) BCOVPUIBasicControlView *adControlsView;
-
-/**
  * Initializes a BCOVPUIPlayerView using default options with the given
  * BCOVPlaybackController.
  *

@@ -1,3 +1,9 @@
+# 1.0.1
+### Additions and Improvements
+* Reformatted the framework's short version string to comply with App Store submission requirements.
+* Fixed a bug where the text on the "Live" indicator button was missing.
+
+
 # 1.0.0
 ### Breaking Changes
 * The `BCOVPUIControlLayoutStrategy layoutStrategy` property of the `BCOVPUIControlLayout` class has been removed in favor of a simpler method of specifying control layouts. See the sample code in README.md for details.
