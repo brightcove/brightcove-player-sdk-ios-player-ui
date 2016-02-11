@@ -12,7 +12,7 @@ The Brightcove PlayerUI Plugin provides two installation packages for iOS, a sta
 CocoaPods
 --------------
 
-You can use [Cocoapods][cocoapods] to add the PlayerUI Plugin for Brightcove Player SDK to your project.  You can find the latest `Brightcove-Player-SDK-Player-UI` podspec [here][podspecs].
+You can use [CocoaPods][cocoapods] to add the PlayerUI Plugin for Brightcove Player SDK to your project.  You can find the latest `Brightcove-Player-SDK-Player-UI` podspec [here][podspecs].
 
 Static Framework example:
 
