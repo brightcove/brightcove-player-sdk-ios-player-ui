@@ -1,4 +1,4 @@
-# BCOVPlayerUI, Plugin for Brightcove Player SDK for iOS, version 1.0.1.94
+# BCOVPlayerUI Plugin for Brightcove Player SDK for iOS, version 1.0.2.125
 
 Supported Platforms
 ===================
@@ -12,7 +12,7 @@ The Brightcove PlayerUI Plugin provides two installation packages for iOS, a sta
 CocoaPods
 --------------
 
-You can use [Cocoapods][cocoapods] to add the PlayerUI Plugin for Brightcove Player SDK to your project.  You can find the latest `Brightcove-Player-SDK-Player-UI` podspec [here][podspecs].
+You can use [CocoaPods][cocoapods] to add the PlayerUI Plugin for Brightcove Player SDK to your project.  You can find the latest `Brightcove-Player-SDK-Player-UI` podspec [here][podspecs].
 
 Static Framework example:
 
@@ -35,7 +35,8 @@ To add the PlayerUI Plugin for Brightcove Player SDK to your project manually:
     * `BrightcovePlayerUI.framework`
 6. (Dynamic Framework only) On the "General" tab of your application target, add 'BrightcovePlayerUI.framework' to the "Embedded Binary" section.
 7. (Dynamic Framework only) On the "Build Phases" tab, add a "Run Script" phase with the command `bash ${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightcovePlayerUI.framework/strip-frameworks.sh`. Check "Run script only when installing". This will remove unneeded architectures from the build, which is important for App Store submission. ([rdar://19209161][19209161])
-7. (Static Framework only) On the "Build Settings" tab of your application target, add `-ObjC` to the "Other Linker Flags" build setting.
+8. (Static Framework only) On the "Build Settings" tab of your application target, add `-ObjC` to the "Other Linker Flags" build setting.
+9. (Static Framework only) Add the file `bcovpuiiconfont.ttf` from the `BrightcovePlayerUI.framework` bundle directly to your project listing so that the font file is copied into the app bundle. In the end, the font file should end up at the same level as the app's `Info.plist` file. The font file supplies some of the BrightcovePlayerUI interface elements, but it does not need to be listed in the plist itself.
 
 Imports
 --------------

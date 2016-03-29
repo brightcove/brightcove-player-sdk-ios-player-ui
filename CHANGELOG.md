@@ -1,3 +1,8 @@
+# 1.0.2
+### Additions and Improvements
+* Fixed a problem where the playback button was set to the wrong state when playing interstitial ads.
+* Fixed a bug where the closed caption popover view would appear in the wrong place on iPads.
+
 # 1.0.1
 ### Additions and Improvements
 * Reformatted the framework's short version string to comply with App Store submission requirements.

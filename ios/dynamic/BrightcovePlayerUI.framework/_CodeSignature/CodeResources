@@ -6,31 +6,31 @@
 	<dict>
 		<key>Headers/BCOVPUIBasicControlView.h</key>
 		<data>
-		ws2vQk2LU++PRrfhWCc2WShtvHY=
+		4u+LltODRacQZQQsxf8XzzZIR7A=
 		</data>
 		<key>Headers/BCOVPUICommon.h</key>
 		<data>
-		k+AcMbKU55oxE3d5bo0rwQ1sEHs=
+		5ilBgIegqfPwqa2u8sOiHzle+90=
 		</data>
 		<key>Headers/BCOVPUILayoutView.h</key>
 		<data>
-		v0YKxM6rtP3f6EADlNeLAEJ1OAY=
+		b42rAiDsLLkiaoEc4jNFtUiAp9w=
 		</data>
 		<key>Headers/BCOVPUIPlayerView.h</key>
 		<data>
-		iNjZrFthqkqvXeCNFr+ecEf2L98=
+		Bzolb+6fy8yX1ohqSYfOVUvx4w0=
 		</data>
 		<key>Headers/BCOVPUISlider.h</key>
 		<data>
-		6Lcj7yyDNBE/RZ16kSjYqhZtui0=
+		OWRITMXxDVbSg9JhMwXsySQuZCY=
 		</data>
 		<key>Headers/BrightcovePlayerUI.h</key>
 		<data>
-		xFNS+vCezDyS0DUYu1cnOv6Vvzo=
+		TJyOH700NW0/f3HRVM2sOey2PrM=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		+dpVDKERtKvdBP9srScM9WG6GY8=
+		KxBIQotsiHdkWrdSCWuZUB7NBjI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -44,37 +44,93 @@
 	<key>files2</key>
 	<dict>
 		<key>Headers/BCOVPUIBasicControlView.h</key>
-		<data>
-		ws2vQk2LU++PRrfhWCc2WShtvHY=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			4u+LltODRacQZQQsxf8XzzZIR7A=
+			</data>
+			<key>hash2</key>
+			<data>
+			Mq/zonTbPD4gZ+/Bc9apgV+V5SlTH05RqIEM7+yAc9c=
+			</data>
+		</dict>
 		<key>Headers/BCOVPUICommon.h</key>
-		<data>
-		k+AcMbKU55oxE3d5bo0rwQ1sEHs=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			5ilBgIegqfPwqa2u8sOiHzle+90=
+			</data>
+			<key>hash2</key>
+			<data>
+			OGC/maNSdkVSv/evY990QvSBATvVEQKowKBElwU6DcA=
+			</data>
+		</dict>
 		<key>Headers/BCOVPUILayoutView.h</key>
-		<data>
-		v0YKxM6rtP3f6EADlNeLAEJ1OAY=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			b42rAiDsLLkiaoEc4jNFtUiAp9w=
+			</data>
+			<key>hash2</key>
+			<data>
+			Yg0ZB2IYi2RZMbOMolI9Xn4Br2gwizOrbPBddo2S2EY=
+			</data>
+		</dict>
 		<key>Headers/BCOVPUIPlayerView.h</key>
-		<data>
-		iNjZrFthqkqvXeCNFr+ecEf2L98=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Bzolb+6fy8yX1ohqSYfOVUvx4w0=
+			</data>
+			<key>hash2</key>
+			<data>
+			tl4G7Euq1O2I6Rg89nkEg6GOyRfHckrrtoQFlEj7FPk=
+			</data>
+		</dict>
 		<key>Headers/BCOVPUISlider.h</key>
-		<data>
-		6Lcj7yyDNBE/RZ16kSjYqhZtui0=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			OWRITMXxDVbSg9JhMwXsySQuZCY=
+			</data>
+			<key>hash2</key>
+			<data>
+			iqT6mqlStLjWh+++nfp8N/tbdHp3rRbhS6mswC1V0Es=
+			</data>
+		</dict>
 		<key>Headers/BrightcovePlayerUI.h</key>
-		<data>
-		xFNS+vCezDyS0DUYu1cnOv6Vvzo=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			TJyOH700NW0/f3HRVM2sOey2PrM=
+			</data>
+			<key>hash2</key>
+			<data>
+			bnVU3AvNJs7Ao3H1ttHUT+dRuRde4pblLCC9XolKWDs=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		P5JnjAod2r8GTYVYg8KRzTr9jjQ=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			P5JnjAod2r8GTYVYg8KRzTr9jjQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			c8F+7S+b9MwDGJcZzUpWSNvKBjKLomINbQ7fjVJrJHo=
+			</data>
+		</dict>
 		<key>bcovpuiiconfont.ttf</key>
-		<data>
-		PxST15iPhUO7k3y19WBgRQFX0ek=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			PxST15iPhUO7k3y19WBgRQFX0ek=
+			</data>
+			<key>hash2</key>
+			<data>
+			IbLbLM0wCvFDjXuT/RdCJGw87niCj4B7OfuabkPUX28=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
