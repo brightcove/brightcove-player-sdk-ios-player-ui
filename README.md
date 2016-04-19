@@ -1,4 +1,4 @@
-# BCOVPlayerUI Plugin for Brightcove Player SDK for iOS, version 1.0.2.125
+# BCOVPlayerUI Plugin for Brightcove Player SDK for iOS, version 1.0.3.137
 
 Supported Platforms
 ===================
@@ -107,10 +107,11 @@ Supplied Layouts
 ----------------------
 Three layouts are provided to support different types of video:
 
-- `BCOVPUIControlLayout basicVODControlLayout` is a basic layout for geenral on-demand video streams.
+- `BCOVPUIControlLayout basicVODControlLayout` is a basic layout for general on-demand video streams.
 
 - `BCOVPUIControlLayout basicLiveControlLayout` is a layout targeted towards live video.
-`BCOVPUIControlLayout basicLiveDVRControlLayout` is targeted towards live video streams with DVR controls.
+
+- `BCOVPUIControlLayout basicLiveDVRControlLayout` is targeted towards live video streams with DVR controls.
 
 You typically set a new layout immediatley after your `BCOVPUIPlayerView` is created, but you can also set a new layout at any time. For example, you can set a new VOD layout like this:
 

@@ -1,3 +1,11 @@
+# 1.0.3
+### Breaking Changes
+* Release 1.0.3 of the Brightcove PlayerUI Plugin for Brightcove Player SDK for iOS requires release 5.0.5 or higher of the Brightcove Player SDK.
+
+### Additions and Improvements
+* The closed caption menu control now includes optional audio tracks. The control is implemented using the new media options access methods
+available in release 5.0.5 of the Brightcove Player SDK.
+
 # 1.0.2
 ### Additions and Improvements
 * Fixed a problem where the playback button was set to the wrong state when playing interstitial ads.
