@@ -8,6 +8,10 @@
 		<data>
 		4u+LltODRacQZQQsxf8XzzZIR7A=
 		</data>
+		<key>Headers/BCOVPUIButton.h</key>
+		<data>
+		sY1DhmIVdwstICaHdxo/AQKGStM=
+		</data>
 		<key>Headers/BCOVPUICommon.h</key>
 		<data>
 		5ilBgIegqfPwqa2u8sOiHzle+90=
@@ -26,11 +30,11 @@
 		</data>
 		<key>Headers/BrightcovePlayerUI.h</key>
 		<data>
-		TJyOH700NW0/f3HRVM2sOey2PrM=
+		5easzB1DlkO+HnO3svRTwGi+LaU=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		hL8WdDvLoA4ovhPC1pTbZ+dKtuQ=
+		Qeah85mM3f4CsFhIh4M5IYTYacc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -52,6 +56,17 @@
 			<key>hash2</key>
 			<data>
 			Mq/zonTbPD4gZ+/Bc9apgV+V5SlTH05RqIEM7+yAc9c=
+			</data>
+		</dict>
+		<key>Headers/BCOVPUIButton.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			sY1DhmIVdwstICaHdxo/AQKGStM=
+			</data>
+			<key>hash2</key>
+			<data>
+			uzf3IOh2mpFjr8vkyTGNeGZ/q0lkxtnZJIVMp845B+k=
 			</data>
 		</dict>
 		<key>Headers/BCOVPUICommon.h</key>
@@ -102,11 +117,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TJyOH700NW0/f3HRVM2sOey2PrM=
+			5easzB1DlkO+HnO3svRTwGi+LaU=
 			</data>
 			<key>hash2</key>
 			<data>
-			bnVU3AvNJs7Ao3H1ttHUT+dRuRde4pblLCC9XolKWDs=
+			fjreqsdv5yUP65OXvQGzPp8sbR4pBFxb9N2Pv7uzWsg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

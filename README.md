@@ -1,4 +1,4 @@
-# BCOVPlayerUI Plugin for Brightcove Player SDK for iOS, version 1.0.3.137
+# BCOVPlayerUI Plugin for Brightcove Player SDK for iOS, version 1.0.4.143
 
 Supported Platforms
 ===================

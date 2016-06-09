@@ -15,6 +15,7 @@ FOUNDATION_EXPORT double BrightcovePlayerUIVersionNumber;
 FOUNDATION_EXPORT const unsigned char BrightcovePlayerUIVersionString[];
 
 #import <BrightcovePlayerUI/BCOVPUIBasicControlView.h>
+#import <BrightcovePlayerUI/BCOVPUIButton.h>
 #import <BrightcovePlayerUI/BCOVPUICommon.h>
 #import <BrightcovePlayerUI/BCOVPUILayoutView.h>
 #import <BrightcovePlayerUI/BCOVPUIPlayerView.h>

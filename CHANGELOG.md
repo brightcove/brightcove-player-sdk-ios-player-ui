@@ -1,3 +1,7 @@
+#1.0.4
+### Additions and Improvements
+* Fixed a problem where the header file BCOVPUIButton.h was missing from some build configurations.
+
 # 1.0.3
 ### Breaking Changes
 * Release 1.0.3 of the Brightcove PlayerUI Plugin for Brightcove Player SDK for iOS requires release 5.0.5 or higher of the Brightcove Player SDK.
